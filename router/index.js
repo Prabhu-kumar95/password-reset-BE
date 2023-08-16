@@ -10,8 +10,8 @@ const keysecret = "gghjnbccxsetyuopplmkhgsarwryippk";
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "a.b.prabhu268@gmail.com",
-    pass: "1234567",
+    user: "nrtech92@gmail.com",
+    pass: "eirryawnyfehnlcu",
   },
 });
 
@@ -106,7 +106,7 @@ router.post("/sendpasswordlink", async (req, res) => {
 
     if (setusertoken) {
       const mailOptions = {
-        from: "a.b.prabhu268@gmail.com",
+        from: "nrtech92@gmail.com",
         to: email,
         subject: "Sending Email for Password Reset",
         text: `This link valid for two minutes http://localhost:3000/forgotpassword/${userfind.id}/${setusertoken.verifytoken}`,
@@ -146,7 +146,7 @@ router.get("/forgotpassword/:id/:token", async (req, res) => {
   }
 });
 
-router.post("/:id/:token", async (res, req) => {
+router.post("/:id/:token", async (req, res) => {
   const { id, token } = req.params;
 
   const { password } = req.body;
