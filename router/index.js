@@ -109,7 +109,7 @@ router.post("/sendpasswordlink", async (req, res) => {
         from: "nrtech92@gmail.com",
         to: email,
         subject: "Sending Email for Password Reset",
-        text: `This link valid for two minutes https://password-resets.onrender.com/api/${userfind.id}/${setusertoken.verifytoken}`,
+        text: `This link valid for two minutes https://password-resets.onrender.com/api/forgotpassword/${userfind.id}/${setusertoken.verifytoken}`,
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
